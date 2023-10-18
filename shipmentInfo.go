@@ -17,15 +17,6 @@ type ShipmentInfo struct {
 	EmailToNotify string `json:"emailToNotfiy"`
 }
 
-func (s ShipmentInfo) checkUrlValidity() bool {
-	pattern := regexp.MustCompile(`^(https?)://([A-Za-z0-9.-]+)(:[0-9]+)?(/[^/\s]*)?(\?[^\s]*)?$`)
-	matched := pattern.MatchString(s.ShipmentUrl)
-	if matched == false {
-		log.Fatal("Url %s is invalid.", s.ShipmentUrl)
-	}
-	return matched
-}
-
 func (s ShipmentInfo) checkEmailToNotify() bool {
 	pattern := regexp.MustCompile(`^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`)
 	matched := pattern.MatchString(s.EmailToNotify)
@@ -74,9 +65,8 @@ func readShipmentFromFile() []ShipmentInfo {
 
 func (s ShipmentInfo) validateShipmentInfo() bool {
 	isEmailOk := s.checkEmailToNotify()
-	isUrlOk := s.checkUrlValidity()
 
-	if isEmailOk && isUrlOk {
+	if isEmailOk {
 		return true
 	} else {
 		return false

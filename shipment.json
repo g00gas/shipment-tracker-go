@@ -1,10 +1,10 @@
 [
     {
-        "shipmentUrl": "http://www.google.com",
+        "shipmentId": "123SAD12321W",
         "emailToNotfiy": "foo@bar.com"
     },
     {
-        "shipmentUrl": "http://www.google.pl",
+        "shipmentUrl": "dASDQWASD",
         "emailToNotfiy": "foo@bar.be"
     }
 ]
