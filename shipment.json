@@ -1,0 +1,10 @@
+[
+    {
+        "shipmentUrl": "http://www.google.com",
+        "emailToNotfiy": "foo@bar.com"
+    },
+    {
+        "shipmentUrl": "http://www.google.pl",
+        "emailToNotfiy": "foo@bar.be"
+    }
+]
